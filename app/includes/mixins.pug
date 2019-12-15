@@ -1,0 +1,9 @@
+mixin SidebarCard(caption, img)
+  figure.sidebar__card
+    img.sidebar__img(src="images/sidebar_cards/" + img, alt=caption)
+    figcaption.sidebar__figcaption= caption
+
+mixin Button
+  a.btn(href="#") More
+
+  

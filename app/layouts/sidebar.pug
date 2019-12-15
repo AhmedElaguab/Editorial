@@ -1,2 +1,59 @@
+include ./../includes/mixins
+
+- 
+  var menuItems = [{label: 'Homepage'},
+    {label: 'Generic'},
+    {label: 'Elements'},
+    {label: 'Submenu', elements: [
+      'Submenu 1',
+      'Submenu 2',
+      'Submenu 3',
+      'Submenu 4'
+      ]
+    },
+    {label: 'Skills'},
+    {label: 'Portfolio'},
+    {label: 'Contact'}
+    ];
+  
+  var trendCards = [
+    {
+      src: 'pic07.jpg',
+      caption: 'Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.',
+    },
+    {
+      src: 'pic08.jpg',
+      caption: 'Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.',
+    },
+    {
+      src: 'pic09.jpg',
+      caption: 'Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.',
+    }
+  ]
+
 aside.sidebar
-    h3 Sidebar
+    .sidebar__form
+      input.sidebar__input(type="text", placeholder="Search")
+      i.sidebar__icon.fas.fa-search.fa-flip-horizontal.fa-lg  
+    ul.sidebar__menu
+      h2 Menu
+      each item in menuItems
+        li= item.label
+        if item.elements
+          ul.sidebar__submenu
+            for ele in item.elements
+              li= ele
+    .sidebar__trend
+      h2 Trends
+      each card in trendCards
+        +SidebarCard(card.caption, card.src)
+      +Button
+    .sidebar__contact
+      h2 Get in touch
+      p Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
+      ul
+        li information@untitled.tld
+        li (000) 000-0000
+        li 1234 Somewhere Road #8254 Nashville, TN 00000-0000
+    .sidebar__footer
+      p © Untitled. All rights reserved. Demo Images: Unsplash. Design: HTML5 UP.

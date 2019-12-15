@@ -5,6 +5,35 @@
 
 .sidebar {
   width: 400px;
+  background-color: $colorGrayLighter;
+
+  &__form {
+    background-color: $colorGrayLight;
+    padding: 35px;
+    position: relative;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    border: 1px solid #d2d7d9bf;
+    border-radius: 6px;
+
+    &:focus {
+      border-color: $colorOrange;
+      box-shadow: 0 0 0 1px $colorOrange;
+      outline: none;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    right: 47px;
+    top: calc(50% - 8px);
+    color: $colorGray;
+  }
 }
 
 .main-content {
