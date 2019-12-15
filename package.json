@@ -5,7 +5,8 @@
   },
   "dependencies": {
     "jquery": "^3.4.1",
-    "modernizr": "^3.7.1"
+    "modernizr": "^3.7.1",
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

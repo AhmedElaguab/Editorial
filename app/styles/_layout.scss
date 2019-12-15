@@ -1,0 +1,12 @@
+.page {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  width: 400px;
+}
+
+.main-content {
+  flex-grow: 1;
+}
