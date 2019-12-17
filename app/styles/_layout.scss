@@ -50,6 +50,7 @@
     display: inline-block;
     border-bottom: 3px solid $colorOrange;
     padding: 0 25px 8px 0;
+    color: $colorDark;
   }
 
   &__menu {
@@ -154,6 +155,26 @@
 
   &__figcaption {
     color: $colorGray;
+  }
+
+  &__contact {
+    padding: 0 35px;
+    color: $colorGray;
+
+    &-item {
+      padding: 10px 0;
+
+      & .fa-li {
+        margin-right: 10px;
+      }
+      span {
+        display: inline-block;
+      }
+    }
+
+    &-icon {
+      color: $colorOrange;
+    }
   }
 }
 
