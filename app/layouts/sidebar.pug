@@ -42,11 +42,11 @@ aside.sidebar
       ul.sidebar__menu
         each item in menuItems
           li.sidebar__menu-item
-            //- (class=item.elements ? '.sidebar__menu-item--submenu' : '')
-            a.sidebar__menu-link(href="#")= item.label
-              if item.elements
+            if !item.elements
+              a.sidebar__menu-link(href="#")= item.label
+            else
+              span.sidebar__menu-link= item.label
                 i.sidebar__menu-link-icon.fas.fa-chevron-down
-            if item.elements
               ul.sidebar__submenu
                 for ele in item.elements
                   li.sidebar__submenu-item
@@ -55,8 +55,8 @@ aside.sidebar
     .sidebar__trend
       h2.sidebar__heading Trends
       each card in trendCards
-        +SidebarCard(card.caption, card.src)
-      +Button
+        +sidebarCard(card.caption, card.src)
+      +button('More')
     .sidebar__devider
     .sidebar__contact
       h2.sidebar__heading Get in touch

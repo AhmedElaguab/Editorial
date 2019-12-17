@@ -70,6 +70,8 @@
       color: $colorDark;
       padding: 10px 0;
       position: relative;
+      cursor: pointer;
+      user-select: none;
 
       &.active {
         color: $colorOrange;
