@@ -36,6 +36,12 @@
     color: $colorGray;
   }
 
+  &__devider {
+    height: 2px;
+    background-color: $colorGray;
+    margin: 50px 35px;
+  }
+
   &__nav {
     padding: 35px;
   }
@@ -114,6 +120,38 @@
         color: $colorOrange;
       }
     }
+  }
+
+  &__trend {
+    padding: 0 35px 35px 35px;
+  }
+
+  &__card {
+    margin: 0;
+    padding: 40px 0;
+    border-bottom: 1px solid $colorGray;
+  }
+
+  &__img {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+
+    &:hover {
+      img {
+        transform: scale(1.05);
+      }
+    }
+
+    img {
+      display: block;
+      min-width: 100%;
+      transition: all 0.1s ease-in-out;
+    }
+  }
+
+  &__figcaption {
+    color: $colorGray;
   }
 }
 
