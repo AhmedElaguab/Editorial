@@ -119,6 +119,10 @@
       font-size: 0.9rem;
       display: block;
 
+      &.active {
+        color: $colorOrange;
+      }
+
       &:hover {
         color: $colorOrange;
       }
