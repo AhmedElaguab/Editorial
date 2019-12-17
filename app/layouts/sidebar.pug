@@ -35,21 +35,28 @@ aside.sidebar
     .sidebar__form
       input.sidebar__input(type="text", placeholder="Search")
       i.sidebar__icon.fas.fa-search.fa-flip-horizontal.fa-lg  
-    ul.sidebar__menu
-      h2 Menu
-      each item in menuItems
-        li= item.label
-        if item.elements
-          ul.sidebar__submenu
-            for ele in item.elements
-              li= ele
+    nav.sidebar__nav
+      header.sidebar__header
+        h2.sidebar__heading Menu
+      ul.sidebar__menu
+        each item in menuItems
+          li.sidebar__menu-item
+            //- (class=item.elements ? '.sidebar__menu-item--submenu' : '')
+            a.sidebar__menu-link(href="#")= item.label
+              if item.elements
+                i.sidebar__menu-link-icon.fas.fa-chevron-down
+            if item.elements
+              ul.sidebar__submenu
+                for ele in item.elements
+                  li.sidebar__submenu-item
+                    a.sidebar__submenu-link(href="#")= ele
     .sidebar__trend
-      h2 Trends
+      h2.sidebar__heading Trends
       each card in trendCards
         +SidebarCard(card.caption, card.src)
       +Button
     .sidebar__contact
-      h2 Get in touch
+      h2.sidebar__heading Get in touch
       p Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
       ul
         li information@untitled.tld

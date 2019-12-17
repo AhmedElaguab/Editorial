@@ -3,6 +3,7 @@
   flex-direction: row;
 }
 
+// Start sidebar styles
 .sidebar {
   width: 400px;
   background-color: $colorGrayLighter;
@@ -17,7 +18,7 @@
     display: block;
     width: 100%;
     font-size: 1.2rem;
-    padding: 12px 20px;
+    padding: 12px 40px 12px 20px;
     border: 1px solid #d2d7d9bf;
     border-radius: 6px;
 
@@ -33,6 +34,86 @@
     right: 47px;
     top: calc(50% - 8px);
     color: $colorGray;
+  }
+
+  &__nav {
+    padding: 35px;
+  }
+
+  &__heading {
+    display: inline-block;
+    border-bottom: 3px solid $colorOrange;
+    padding: 0 25px 8px 0;
+  }
+
+  &__menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    &-item {
+      padding: 10px 0;
+      border-bottom: 1px solid $colorGray;
+    }
+
+    &-link {
+      font-size: 1rem;
+      display: block;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $colorDark;
+      padding: 10px 0;
+      position: relative;
+
+      &.active {
+        color: $colorOrange;
+      }
+
+      &-icon {
+        position: absolute;
+        right: 0;
+        top: calc(50% - 8px);
+        transition: all 0.2s ease-in-out;
+      }
+
+      &:hover {
+        color: $colorOrange;
+      }
+
+      &.active + .sidebar__submenu {
+        display: block;
+      }
+
+      &.active > .sidebar__menu-link-icon {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &__submenu {
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+    padding-left: 25px;
+    list-style: none;
+    display: none;
+
+    &-item {
+      padding: 7px 0;
+    }
+
+    &-link {
+      padding: 7px 0;
+      color: $colorGray;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      display: block;
+
+      &:hover {
+        color: $colorOrange;
+      }
+    }
   }
 }
 
